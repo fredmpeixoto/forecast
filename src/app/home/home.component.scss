@@ -1,0 +1,23 @@
+:host {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 80vh;
+    overflow-y: scroll;
+    gap: 12px;
+  }
+
+  .card {
+    width: 22vw;
+
+    mat-card-title {
+      height: 60px;
+    }
+  }
+}
