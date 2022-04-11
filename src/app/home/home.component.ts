@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
 
   buildUrl() {
     this.error = false;
+    this.forecasts.length = 0;
     const { searchtype, address, benchmark } = this.model;
 
     this.addressService
@@ -51,10 +52,10 @@ export class HomeComponent implements OnInit {
         switchMap(({ properties }) =>
           this.forecastService.getForecastSevenDays(properties.forecast)
         )
-      )
+     )
       .subscribe({
-        next: (next) => {
-          this.fillForecast(next);
+        next: (forecast) => {
+          this.fillForecast(forecast);
         },
         error: () => {
           this.error = true;

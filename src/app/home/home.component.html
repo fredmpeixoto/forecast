@@ -1,11 +1,13 @@
-<h1>Wellcome, type the address (Number, Street Name, City)</h1>
+<h1
+(click)="model.address = '2268 five avenue new york'"
+>Wellcome, type the address (Number, Street Name, City)</h1>
 
 <mat-form-field class="example-form-field" appearance="fill">
   <mat-label>Clearable input</mat-label>
   <input
     matInput
     type="text"
-    (keypress)="buildUrl()"
+    (keyup)="buildUrl()"
     [(ngModel)]="model.address"
   />
 </mat-form-field>
