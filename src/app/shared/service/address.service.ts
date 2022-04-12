@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { tap, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 interface ResultAddress {
   result: {
@@ -19,21 +20,9 @@ interface ResultAddress {
 export class AddressService {
   constructor(private http: HttpClient) {}
 
-  //example https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=1600+Amphitheatre+Parkway+Mountain+View,+CA+9404&benchmark=2020&benchmark=4&vintage=4&format=json
-
-  getCoordinates(requestType: string, address: string, benchmark: string) {
+  getCoordinates(address: string) {
     const addressAndStreetName = address.trim().split(' ').join('+');
-
-    const url = `https://geocoding.geo.census.gov/geocoder/locations/${requestType}?address=${addressAndStreetName}&benchmark=${benchmark}&format=json`;
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        Accept: '*/*',
-      }),
-    };
-    return this.http.get<ResultAddress>(url, {
-      responseType: 'json',
-      headers: httpOptions.headers,
-    });
+    const url = `${environment.api}/Weather?address=${addressAndStreetName}`;
+    return this.http.get<ResultAddress>(url);
   }
 }

@@ -11,8 +11,8 @@ export class ForecastService {
 
   //ex: https://api.weather.gov/points/37.4235,-122.0868
   getForecast(
-    latitude: string = '37.4235',
-    longitude: string = '-122.0868'
+    latitude: number,
+    longitude: number
   ): Observable<{
     properties: { forecast: string };
   }> {

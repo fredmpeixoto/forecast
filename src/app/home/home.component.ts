@@ -10,7 +10,7 @@ import { ForecastService } from '../shared/service/forecast.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   public model!: Address;
   public error!: boolean;
   public forecasts: Forecast[] = [];
@@ -20,35 +20,27 @@ export class HomeComponent implements OnInit {
     private forecastService: ForecastService
   ) {
     this.model = {
-      city: '',
-      numberAndStreetName: '',
       state: '',
       zipCode: '',
-      returntype: 'location',
-      searchtype: 'onelineaddress',
-      benchmark: '2020',
       address: '',
     };
   }
 
-  ngOnInit(): void {
-    //to do remove code for test
-    // this.forecastService.getForecastSevenDays('https://api.weather.gov/gridpoints/MTR/93,87/forecast')
-    // .subscribe(({next: (next)=> {
-    //   this.fillForecast(next);
-    // }}))
-  }
+
 
 
   buildUrl() {
     this.error = false;
     this.forecasts.length = 0;
-    const { searchtype, address, benchmark } = this.model;
+    const {  address } = this.model;
 
     this.addressService
-      .getCoordinates(searchtype, address, benchmark)
+      .getCoordinates(address)
       .pipe(
-        switchMap(() => this.forecastService.getForecast()),
+        switchMap(({ result }) => {
+          const {x, y} = result.addressMatches[0].coordinates;
+          return this.forecastService.getForecast(y, x);
+        }),
         switchMap(({ properties }) =>
           this.forecastService.getForecastSevenDays(properties.forecast)
         )
@@ -59,6 +51,7 @@ export class HomeComponent implements OnInit {
         },
         error: () => {
           this.error = true;
+          this.forecasts.length = 0;
         },
       });
   }
