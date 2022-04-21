@@ -1,0 +1,15 @@
+
+version: '3.3'
+services:
+  ui:
+    container_name: angular-container
+    build: /ui/.
+    ports:
+      - '80:80'
+
+  api:
+    container_name: dot-net-container
+    build: /api/forecast/
+    ports:
+      - '7211:443'
+      - '5211:80'

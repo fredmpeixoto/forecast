@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJETOS\\forecast\\backend\\forecast\\forecast\\forecast.csproj": {}
+    "D:\\PROJETOS\\forecast\\code\\api\\forecast\\forecast\\forecast.csproj": {}
   },
   "projects": {
-    "D:\\PROJETOS\\forecast\\backend\\forecast\\forecast\\forecast.csproj": {
+    "D:\\PROJETOS\\forecast\\code\\api\\forecast\\forecast\\forecast.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJETOS\\forecast\\backend\\forecast\\forecast\\forecast.csproj",
+        "projectUniqueName": "D:\\PROJETOS\\forecast\\code\\api\\forecast\\forecast\\forecast.csproj",
         "projectName": "forecast",
-        "projectPath": "D:\\PROJETOS\\forecast\\backend\\forecast\\forecast\\forecast.csproj",
+        "projectPath": "D:\\PROJETOS\\forecast\\code\\api\\forecast\\forecast\\forecast.csproj",
         "packagesPath": "C:\\Users\\fredm\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJETOS\\forecast\\backend\\forecast\\forecast\\obj\\",
+        "outputPath": "D:\\PROJETOS\\forecast\\code\\api\\forecast\\forecast\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fredm\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
+              "target": "Package",
+              "version": "[1.14.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"

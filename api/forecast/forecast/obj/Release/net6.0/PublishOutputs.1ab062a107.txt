@@ -1,0 +1,11 @@
+D:\PROJETOS\forecast\code\api\forecast\build\forecast.exe
+D:\PROJETOS\forecast\code\api\forecast\build\appsettings.Development.json
+D:\PROJETOS\forecast\code\api\forecast\build\appsettings.json
+D:\PROJETOS\forecast\code\api\forecast\build\forecast.dll
+D:\PROJETOS\forecast\code\api\forecast\build\forecast.deps.json
+D:\PROJETOS\forecast\code\api\forecast\build\forecast.runtimeconfig.json
+D:\PROJETOS\forecast\code\api\forecast\build\forecast.pdb
+D:\PROJETOS\forecast\code\api\forecast\build\Microsoft.OpenApi.dll
+D:\PROJETOS\forecast\code\api\forecast\build\Swashbuckle.AspNetCore.Swagger.dll
+D:\PROJETOS\forecast\code\api\forecast\build\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\PROJETOS\forecast\code\api\forecast\build\Swashbuckle.AspNetCore.SwaggerUI.dll
